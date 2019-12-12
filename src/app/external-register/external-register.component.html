@@ -1,0 +1,57 @@
+<form [formGroup]="registerUserForm">
+  <div class="grid-container">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          Registrar usuario
+        </mat-card-title>
+        <!-- <mat-card-subtitle>
+          Datos de generales para el usuario
+        </mat-card-subtitle> -->
+
+      </mat-card-header>
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+        <mat-form-field fxFlex fxFlex.xs>
+          <input required matInput placeholder="Nombre" maxlength="100" formControlName="FirstName">
+        </mat-form-field>
+        <mat-form-field fxFlex fxFlex.xs>
+          <input required matInput placeholder="Apellido" maxlength="100" formControlName="LastName">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+        <mat-form-field fxFlex fxFlex.xs>
+          <input  required type="email" maxlength="50" matInput placeholder="Email" formControlName="Email">
+        </mat-form-field>
+        <mat-form-field fxFlex fxFlex.xs>
+          <input  required type="number" maxlength="200" matInput placeholder="Identificacion" formControlName="Identification">
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+    
+        <mat-form-field fxFlex fxFlex.xs>
+          <input  required type="text" maxlength="200" matInput placeholder="Username" formControlName="Username">
+        </mat-form-field>
+        <mat-form-field fxFlex fxFlex.xs>
+          <input required  type="password" maxlength="200" matInput placeholder="Password" formControlName="Password">
+        </mat-form-field>
+       
+      </div>
+
+    </mat-card>
+    <br>
+
+    <br>
+
+    <div fxLayoutAlign="start start" fxLayoutGap="10px">
+      <button mat-button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
+      <button mat-button type="reset" >Limpiar</button>
+      <button mat-button mat-raised-button color="primary" [disabled]="registerUserForm.invalid" (click)="save()">
+        Enviar
+      </button>
+    </div>
+  </div>
+
+</form>
